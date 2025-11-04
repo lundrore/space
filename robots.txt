@@ -1,0 +1,32 @@
+User-agent: *
+Disallow: /
+
+# Prevent all web crawlers from crawling website content
+User-agent: *
+Disallow: /
+
+# Specific directives for common search engines
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+# Prevent Web Archive services from archiving
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: Archive.org Bot
+Disallow: /
+
+User-agent: archive.is
+Disallow: /
+
+# Allow crawlers to access robots.txt only
+Allow: /robots.txt

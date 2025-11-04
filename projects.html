@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Prevent search engine indexing and caching -->
+    <meta name="robots" content="noindex, nofollow, nosnippet, noarchive" />
+    <meta name="googlebot" content="noindex, nofollow, nosnippet, noarchive" />
+    <meta name="bingbot" content="noindex, nofollow, nosnippet, noarchive" />
+    <!-- Prevent archive services from saving pages -->
+    <meta name="robots" content="noarchive" />
+    <meta name="archivebot-ignore" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Prevent caching -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>projects</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar navigation -->
+        <aside class="sidebar">
+                <div class="logo"><a href="/">Space</a></div>
+                <ul class="nav-menu">
+                    
+                        <li><a href="./home.html">Home</a></li>
+                    
+                        <li><a href="./projects.html">Projects</a></li>
+                    
+                        <li><a href="./posts.html">Posts</a></li>
+                    
+                        <li><a href="./contact.html">Contact</a></li>
+                    
+                </ul>
+        </aside>
+
+        <!-- Main content -->
+        <main class="content">
+            <h1>项目</h1>
+<h3>系列项目</h3>
+<p><a href="https://github.com/wasuppu/tiny">tiny</a>: <a href="https://github.com/ssloy">ssloy</a> 的一系列小项目 (tinyrenderer, tinyraytracer, tinyraycaster, tinykaboom, tinycompiler) 的 Go 实现，作者没有使用外部库，因此跟着实现了 obj, tga 文件的读取，数学库用于之后大多数的图形学项目上。 还包括了 <a href="https://lisyarus.github.io/blog/posts/implementing-a-tiny-cpu-rasterizer.html">implementing-a-tiny-cpu-rasterizer</a> 这个 tinyrasterizer，作者文章只写到了 Part 6，尽管代码仓库进展多一些，还是只跟到了这里</p>
+<p><a href="https://github.com/wasuppu/eva">eva</a>: <a href="https://github.com/DmitrySoshnikov">Dmitry Soshnikov</a> 的系列课程 (Building an Interpreter from Scratch, Building a Parser from Scratch, Building a Transpiler from Scratch, Building a Typechecker from Scratch) 的 Python 实现，Javascript -&gt; Python, JS 的代码写的太灵活，用 Go 实现的有些痛苦，就全部使用 Python 来做了</p>
+<p><a href="https://github.com/wasuppu/pikuma">pikuma</a>: <a href="https://github.com/gustavopezzi">gustavopezzi</a> 的系列课程 (3D Computer Graphics Programming, Game Physics Engine Programming, 2D Game Engine Development) 的 Go 实现，游戏引擎部分作者嵌入了 lua 解释器，这一步之后没有向后做</p>
+<p><a href="https://github.com/wasuppu/inoneweekend">inoneweekend</a>: <a href="https://raytracing.github.io/">Ray Tracing in One Weekend</a> 系列 Go 实现，还有文章 <a href="https://tayfunkayhan.wordpress.com/2018/11/24/rasterization-in-one-weekend-part-i/">Rasterization in One Weekend</a> 的前两部分，用 tiny 中的数学库来代替 glm，glm 的行为有些不同，做了一些修改</p>
+<h3>书籍代码</h3>
+<p><a href="https://github.com/wasuppu/computation">computation</a>: <a href="https://computationbook.com/">computationbook</a> 中译《计算的本质——深入剖析程序和计算机》，关于计算理论介绍的书籍，Ruby -&gt; Go</p>
+<p><a href="https://github.com/wasuppu/dsacc">dsacc</a>: <a href="https://book.douban.com/subject/1139426/">数据结构与算法分析——C语言描述</a> 数据结构和算法，C -&gt; Go</p>
+<p><a href="https://github.com/wasuppu/groundup">groundup</a>: <a href="https://book.douban.com/subject/2584519/">Ray Tracing from the Ground Up</a> 实现小型的光线追踪器，C++ -&gt; Go</p>
+<p><a href="https://github.com/wasuppu/baseline">baseline</a>: <a href="https://keleshev.com/compiling-to-assembly-from-scratch/">compiling to assembly from scratch</a> 编译器，书中解析是由解析组合子完成，完成第一部分，Typescript -&gt; Go</p>
+<p><a href="https://github.com/wasuppu/dezero">dezero</a>: <a href="https://book.douban.com/subject/36303408/">深度学习入门2——自制框架</a> Python -&gt; Go，完成到步骤43 神经网络，numpy 的 broadcasting 使复刻的有些别扭</p>
+<h3>从头开始加参考</h3>
+<p>基本是从头开始写，代码结构不同或是没有参考代码</p>
+<p><a href="https://github.com/wasuppu/bmp">bmp</a>: 一个 bmp 图片格式的解析器，结构体定义和注释主要来自 <a href="http://msdn.microsoft.com/en-us/library/cc250370.aspx">[MS-WMF]: Windows Metafile Format</a>，</p>
+<p><a href="https://github.com/wasuppu/elf">elf</a>: linux 下可执行文件 elf 的解析器，主要参照文档 <a href="https://refspecs.linuxfoundation.org/elf/TIS1.1.pdf">TIS1.1.pdf</a> 实现，
+借鉴了 <a href="https://github.com/finixbit/elf-parser/">finixbit/elf-parser</a> 和 <a href="https://github.com/macmade/ELFDump/">macmade/ELFDump</a>，输出样式仿照了 readelf，实现了其 -h, -l, -S, -s 这几个选项</p>
+<p><a href="https://github.com/wasuppu/parc">parc</a>: OCaml 写的解析组合子，主要参照 <a href="https://people.cs.nott.ac.uk/pszgmh/">Graham Hutton</a> 书《Programming in Haskell》的第十三章以及作者相关的两篇论文，
+另外用该解析组合子实现 <a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours">wyas</a>，Towards a Standard Library 一章节实现的有些问题</p>
+<p><a href="https://github.com/wasuppu/sexp">sexp</a>: 一个简单的 s 表达式的解析，打算用于 <a href="https://ucsd-compilers-s23.github.io/index.html">ucsd compilers s23</a>，参照了项目使用的 Rust 的 <a href="https://crates.io/crates/sexp">sexp</a> 以及 eva 中用到的 s表达式的解析，框架还是来自于 <a href="https://interpreterbook.com/">interpreterbook</a></p>
+<p><a href="https://github.com/wasuppu/codecrafters">codecrafters</a>: <a href="https://app.codecrafters.io/catalog">codecrafters</a> 网站的挑战解，代码没有整理，完成的 shell 和 browser 网站又有更新，有时间继续完成</p>
+<p><a href="https://github.com/wasuppu/bencode">bencode</a>: 为写 codercrafers 的 bitorrent 做的准备，将前面的手动解析的代码用 marshal/unmarshal 进行包装，方便使用</p>
+<p><a href="https://github.com/wasuppu/argparse">argparse</a>: 刚开始学 Go 写的简单的命令行参数解析器，在 <a href="https://github.com/rosetta-rs/argparse-rosetta-rs">argparse-rosetta-rs</a> 发现的 <a href="https://github.com/razrfalcon/pico-args">pico-args</a> 觉得代码量不大，就自己随便开始写了，逻辑混乱，乱七八糟，参考了 go 的 flag 和 python 的 getopt</p>
+<h3>重写加上修改</h3>
+<p>有参照物的代码，但是进行了修改，或是结合多个参考的混合物</p>
+<p><a href="https://github.com/wasuppu/automata">automata</a>: 自动机是来自 <a href="https://github.com/DmitrySoshnikov">Dmitry Soshnikov</a> 的自动机课程，解析部分参照 <a href="https://deniskyashif.com/2019/02/17/implementing-a-regular-expression-engine/">implementing a regular expression engine</a> 结合自己代码生成的 AST</p>
+<p><a href="https://github.com/wasuppu/lept">lept</a>: <a href="https://github.com/miloyip">miloyip</a> 的 <a href="https://github.com/miloyip/json-tutorial">json-tutorial</a>，依照其步骤，但是采取 <a href="https://interpreterbook.com/">interpreterbook</a> 的代码框架进行解析的</p>
+<p><a href="https://github.com/wasuppu/chibiccgo">chibiccgo</a>: <a href="https://github.com/rui314">rui314</a> 的 <a href="https://github.com/rui314/chibicc">chibicc</a> Go 重写，一个五脏俱全的 C 编译器，后端参考 <a href="https://github.com/sunshaoce/rvcc">rvcc</a> 写了 RISC-V 版本，但中途测试失败没有继续，最终完成的版本只有 x86-64 的内容</p>
+<p><a href="https://github.com/wasuppu/brainfuck">brainfuck</a>: 一个渐进实现的 brainfuck 解释器，包括几个不同版本</p>
+<p><a href="https://github.com/wasuppu/lisgo">lisgo</a>: <a href="https://norvig.com/lispy.html">norvig lispy</a> 的 Go 重写，文章还有第二篇待做</p>
+<p><a href="https://github.com/wasuppu/chip8">chip8</a>: 参照这篇文章 <a href="https://austinmorlan.com/posts/chip8_emulator/">Building a CHIP-8 Emulator</a>，指令文档主要参考 <a href="http://devernay.free.fr/hacks/chip8/">devernay</a> 里的资料，做了一些更改使其通过 <a href="https://github.com/corax89/chip8-test-rom/">chip8-test-rom</a> 和 <a href="https://github.com/Timendus/chip8-test-suite/">chip8-test-suite</a> 里的大多数测试。没有实现声音</p>
+<h3>重写的教程</h3>
+<p>跟随教程，将原语言转写为 Go 实现，没有过多改变</p>
+<p><a href="https://github.com/wasuppu/lc3">lc3</a>: <a href="https://www.jmeiners.com/lc3-vm/">Write your Own Virtual Machine</a> C -&gt; Go，键盘部分尝试了几种方式，都不完美，最后还是使用了外部库 <a href="https://github.com/eiannone/keyboard">keyboard</a></p>
+<p><a href="https://github.com/wasuppu/kilo">kilo</a>: <a href="https://viewsourcecode.org/snaptoken/kilo/">Build Your Own Text Editor</a> 的 Go 实现，第二章的 raw mode 从 <a href="https://go.googlesource.com/term.git">go/term.git</a> 和 <a href="https://go.googlesource.com/sys.git">go/sys.git</a> 拿了代码</p>
+<p><a href="https://github.com/wasuppu/emurv">emurv</a>: 参照 PLCT 的 <a href="https://www.bilibili.com/video/BV1uY4y1D7bJ">KSCO老师带你手搓RISC-V高性能模拟器</a> 写的，完成到第7课，读取可执行文件部分从之前写的 elf 解析器中拿取了一些代码，指令实现有些问题没有继续向后做</p>
+<p><a href="https://github.com/wasuppu/rvemu">rvemu</a>: 跟着 <a href="https://github.com/d0iasm/book.rvemu">Writing a RISC-V Emulator in Rust</a> 实现的, 前面的阶段运行正常。最后一步执行 xv6，会运行很长时间然后报错，可能同上也是指令实现问题？我可能需要一个详细的测试</p>
+<p><a href="https://github.com/wasuppu/dnsguide">dnsguide</a>: <a href="https://github.com/EmilHernvall/dnsguide">dnsguide</a> Rust -&gt; Go，其实还是不懂，照着翻译了一遍，不过代码可以运行</p>
+<p><a href="https://github.com/wasuppu/vulkan-tutorial">vulkan-tutorial</a>: <a href="https://vulkan-tutorial.com">vulkan-tutorial</a> C++ -&gt; Go, 完成到27课，需要加载模型。在前面 tinyrenderer 项目中编写的 obj 文件加载缺少了对对象 m 的支持，有时间修改下再继续完成</p>
+<p><a href="https://github.com/wasuppu/simpledb">simpledb</a>: <a href="https://cstack.github.io/db_tutorial/">db_tutorial</a> C -&gt; Go, 用 Go 的测试来替代 Ruby 的 rspec 进行测试用例的编写</p>
+<p><a href="https://github.com/wasuppu/caster">caster</a>: <a href="https://lodev.org/cgtutor/raycasting.html">lodev raycasting</a> C++ -&gt; Go, 使用 SDL2 来替代作者的 QuickCG，最后一章只做了作者提供代码的增补部分</p>
+<p><a href="https://github.com/wasuppu/smu">smu</a>: <a href="https://github.com/Gottox/smu">Gottox/smu</a> C -&gt; Golang，支持了 unicode, 本博客使用的 markdown 解析器</p>
+<p><a href="https://github.com/wasuppu/lox">lox</a>: <a href="http://craftinginterpreters.com/">craftinginterpreters</a> 前半部分的代码实现，不过卡在了第十二章，代码未整理，只有最近的这个版本。跟随 codecrafters 进行了测试，等有时间重新整理各个章节代码并完整实现后再更新</p>
+<h3>浏览一遍的教程</h3>
+<p>浏览一遍的教程或课程，还是同样的语言，手动敲写或是复制粘贴</p>
+<p><a href="https://github.com/wasuppu/os1000">os1000</a>: <a href="https://operating-system-in-1000-lines.vercel.app/">Operating System in 1,000 Lines</a> C，没懂，过了一遍</p>
+<p><a href="https://github.com/wasuppu/learn-go-with-tests">learn-go-with-tests</a>: <a href="https://quii.gitbook.io/learn-go-with-tests">Learn Go with Tests</a> 刚开始学 Go 的时候第一版没看完，第二版第一部分认真看了，后面变的有些复杂敷衍过去了</p>
+<p><a href="https://github.com/wasuppu/monkey">monkey</a>: <a href="https://interpreterbook.com/">interpreterbook</a> 只完成了解释器部分，包括第五章，有时间完成编译器部分</p>
+<p><a href="https://github.com/wasuppu/web">web</a>: 看过的 web 开发的课程的汇总，为面试做的准备，不过代码有些混乱，内容也不很完整</p>
+<p><a href="https://github.com/wasuppu/7days">7days</a>: <a href="https://github.com/geektutu/7days-golang">7days-golang</a> 快速的看了一遍，并没有完全理解，极客兔兔老师写的很好</p>
+<p><a href="https://github.com/wasuppu/gol">gol</a>: <a href="https://github.com/KyleBanks/conways-gol">Conway's Game of Life implemented with Go and OpenGL</a> 尝试用kilo的经验在终端复刻失败，仓库里是跟作者完全一样的OpenGL版本</p>
+<p><a href="https://github.com/wasuppu/redis-scratch">redis-scratch</a>: <a href="https://www.build-redis-from-scratch.dev/">build-redis-from-scratch</a> 虽然很短，跟完全的 redis 差的远得多，但代码写的有点启发，为 codecrafters 的 redis 练习找到资料，尽管看完也只做了一点</p>
+<p><a href="https://github.com/wasuppu/gophercises">gophercises</a>: <a href="https://gophercises.com/">gophercises</a> 在这里了解些奇技淫巧，前面还有跟着敲代码，后面只看视频运行代码了</p>
+<p><a href="https://github.com/wasuppu/learnopengl">learnopengl</a>: <a href="https://learnopengl-cn.github.io/">learnopengl-cn's blog</a> C++，以前跟写的，光照完成，该到模型加载部分，后面还有挺多</p>
+
+        </main>
+    </div>
+</body>
+</html>
